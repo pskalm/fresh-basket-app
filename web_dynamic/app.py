@@ -18,12 +18,14 @@ db_database = os.environ.get('DB_DATABASE')
 
 # Configure MySQL connection
 db_config = {
-    'host': '127.0.0.1',
+    'host': os.environ.get('DB_HOST', '127.0.0.1'),
+    'port': int(os.environ.get('DB_PORT', 3306)),
     'user': db_user,
     'password': db_password,
     'database': db_database,
     'use_pure': True
 }
+
 
 
 
